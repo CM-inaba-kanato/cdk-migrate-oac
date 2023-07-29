@@ -1,4 +1,4 @@
-name: Caching with npm
+name: Caching with node_modules
 on: push
 jobs:
   build:
@@ -24,7 +24,7 @@ jobs:
             ${{ runner.os }}-build-${{ env.cache-name }}-
             ${{ runner.os }}-build-
             ${{ runner.os }}-
-
+      - run: echo '${{ toJSON(steps.cache-node-modules.outputs) }}'
       - if: ${{ steps.cache-node-modules.outputs.cache-hit != 'true' }}
 
       - name: Install dependencies
