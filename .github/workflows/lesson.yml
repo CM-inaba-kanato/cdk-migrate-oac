@@ -4,7 +4,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - name: Set up checkout
+        uses: actions/checkout@v2
 
       - name: Set up node
         uses: actions/setup-node@v2
